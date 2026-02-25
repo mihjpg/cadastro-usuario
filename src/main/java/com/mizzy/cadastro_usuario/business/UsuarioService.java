@@ -18,7 +18,7 @@ public class UsuarioService {
         repository.saveAndFlush(usuario);
     }
 
-    /// buscar por email (404 se não existir)
+    /// buscar por email 
     public Usuario buscarUsuarioPorEmail(String email){
         return repository.findByEmail(email)
                 .orElseThrow(() ->
@@ -29,7 +29,7 @@ public class UsuarioService {
                 );
     }
 
-    /// deletar (404 se não existir)
+    /// deletar 
     public void deletarUsuarioPorEmail(String email){
 
         Usuario usuario = repository.findByEmail(email)
@@ -43,7 +43,7 @@ public class UsuarioService {
         repository.delete(usuario);
     }
 
-    ///  atualizar por id (404 se não existir)
+    ///  atualizar por id 
     public void atualizarUsuarioPorId(Integer id, Usuario usuario){
 
         Usuario usuarioEntity = repository.findById(id)
