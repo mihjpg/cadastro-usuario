@@ -30,7 +30,7 @@ API REST desenvolvida para consolidar meus estudos em **Spring Boot**. O projeto
 * **Spring Data JPA & Hibernate**: Tecnologias utilizadas para o mapeamento objeto-relacional e persistência de dados.
 * **H2 Database**: Utilizado como banco de dados em memória para facilitar os testes e o desenvolvimento inicial.
 
-### 🌱 O que eu pratiquei aqui:
+### 🌱 Por aqui eu aprendi:
 * Configuração de dependências no `pom.xml` (**Maven**).
 * Criação de entidades monitoradas pelo **Hibernate**.
 * Uso de anotações do **Lombok** para produtividade.
