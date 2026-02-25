@@ -1,4 +1,4 @@
-# 🚀 User Management RESTful API | API de Gerenciamento de Usuários
+# 🚀 User Management API | API de Gerenciamento de Usuários
 
 [English](#english) | [Português](#português)
 
@@ -7,46 +7,35 @@
 ## English
 
 ### 📖 Description
-This project is a robust, professional-grade CRUD API developed with **Java 21** and **Spring Boot 3**. It was designed to manage user records through a clean, layered architecture, ensuring scalability and easy maintenance.
+A REST API developed to consolidate my knowledge in **Spring Boot**. The project manages a user database, applying the separation of concerns through a layered architecture (**Controller, Service, Repository**).
 
-### 🛠️ Tech Stack
-* **Language**: Java 21
-* **Framework**: Spring Boot 3.4.x
-* **Data Persistence**: Spring Data JPA
-* **Database**: H2 (In-memory)
-* **Tools**: Postman, Git
-
-### 📌 Features
-* `POST /usuarios`: Create a new user.
-* `GET /usuarios`: List all users or search by email.
-* `PUT /usuarios/{id}`: Update user information.
-* `DELETE /usuarios/{id}`: Remove user records.
-
-### 🏗️ Architecture
-The project follows market standards by separating responsibilities into **Controller**, **Business (Service)**, and **Infrastructure** layers.
+### 🛠️ Technical Specifications
+* **Java 21 & Spring Boot 3**: Core technologies used for the application.
+* **Maven**: Used as the build automation tool and dependency manager (managing libraries like Spring Web and Data JPA).
+* **Lombok**: Integrated to reduce boilerplate code, using annotations like `@Data`, `@Getter`, and `@Setter` to keep the code clean.
+* **Spring Data JPA & Hibernate**: Used for object-relational mapping (ORM) to manage data persistence.
+* **H2 Database**: Used as an in-memory database for testing and rapid development.
 
 ---
 
 ## Português
 
 ### 📖 Descrição
-Este projeto é uma API CRUD de nível profissional desenvolvida com **Java 21** e **Spring Boot 3**. Foi projetada para gerenciar registros de usuários através de uma arquitetura limpa em camadas, garantindo escalabilidade e fácil manutenção.
+API REST desenvolvida para consolidar meus estudos em **Spring Boot**. O projeto realiza o gerenciamento de usuários, aplicando a separação de responsabilidades através de uma arquitetura em camadas (**Controller, Service e Repository**).
 
-### 🛠️ Tecnologias Utilizadas
-* **Linguagem**: Java 21
-* **Framework**: Spring Boot 3.4.x
-* **Persistência de Dados**: Spring Data JPA
-* **Banco de Dados**: H2 (Em memória)
-* **Ferramentas**: Postman, Git
+### 🛠️ Especificações Técnicas
+* **Java 21 & Spring Boot 3**: Tecnologias base utilizadas na construção da aplicação.
+* **Maven**: Utilizado como ferramenta de automação de build e gerenciador de dependências (controlando bibliotecas como Spring Web e JPA).
+* **Lombok**: Integrado para reduzir a verbosidade do código, utilizando anotações como `@Data`, `@Getter` e `@Setter` para manter o código limpo e legível.
+* **Spring Data JPA & Hibernate**: Tecnologias utilizadas para o mapeamento objeto-relacional e persistência de dados.
+* **H2 Database**: Utilizado como banco de dados em memória para facilitar os testes e o desenvolvimento inicial.
 
-### 📌 Funcionalidades
-* `POST /usuarios`: Cria um novo usuário.
-* `GET /usuarios`: Lista todos os usuários ou busca por e-mail.
-* `PUT /usuarios/{id}`: Atualiza informações do usuário.
-* `DELETE /usuarios/{id}`: Remove registros do banco de dados.
-
-### 🏗️ Arquitetura
-O projeto segue padrões de mercado, separando responsabilidades nas camadas **Controller**, **Business (Service)** e **Infrastructure**.
+### 🌱 O que eu pratiquei aqui:
+* Configuração de dependências no `pom.xml` (**Maven**).
+* Criação de entidades monitoradas pelo **Hibernate**.
+* Uso de anotações do **Lombok** para produtividade.
+* Manipulação de rotas HTTP (**POST, GET, PUT, DELETE**).
+* Estruturação de projeto em camadas para melhor manutenção.
 
 ---
-Developed with ☕ by [Ayumi Takeyama]
+📫 **LinkedIn:** [www.linkedin.com/in/oiayumitk]
