@@ -1,6 +1,6 @@
 package com.mizzy.cadastro_usuario.controller;
 
-import com.mizzy.cadastro_usuario.business.UsuarioService;
+import com.mizzy.cadastro_usuario.services.UsuarioService;
 import com.mizzy.cadastro_usuario.infrastructure.entitys.Usuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
