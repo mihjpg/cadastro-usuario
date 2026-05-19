@@ -16,7 +16,7 @@ public class UsuarioService {
     private final UsuarioRepository repository;
 
     /// salvar
-    public UsuarioResponseDTO salverUsuario(UsuarioRequestDTO dto) {
+    public UsuarioResponseDTO salvarUsuario(UsuarioRequestDTO dto) {
 
         Usuario usuario = Usuario.builder()
                 .nome(dto.nome())
@@ -29,14 +29,15 @@ public class UsuarioService {
     }
 
     /// buscar por email
-    public Usuario buscarUsuarioPorEmail(String email){
-        return repository.findByEmail(email)
+    public UsuarioResponseDTO buscarUsuarioPorEmail(String email) {
+        Usuario usuario = repository.findByEmail(email)
                 .orElseThrow(() ->
                         new ResponseStatusException(
                                 HttpStatus.NOT_FOUND,
                                 "Usuário não encontrado"
                         )
                 );
+        return new UsuarioResponseDTO(usuario.getId(), usuario.getNome(), usuario.getEmail());
     }
 
     /// deletar
@@ -54,7 +55,7 @@ public class UsuarioService {
     }
 
     ///  atualizar por id
-    public void atualizarUsuarioPorId(Integer id, Usuario usuario){
+    public void atualizarUsuarioPorId(Integer id, UsuarioRequestDTO dto){
 
         Usuario usuarioEntity = repository.findById(id)
                 .orElseThrow(() ->
@@ -66,9 +67,9 @@ public class UsuarioService {
 
         Usuario usuarioAtualizado = Usuario.builder()
                 .id(usuarioEntity.getId())
-                .nome(usuario.getNome() != null ? usuario.getNome() : usuarioEntity.getNome())
-                .email(usuario.getEmail() != null ? usuario.getEmail() : usuarioEntity.getEmail())
-                .senha(usuario.getSenha() != null ? usuario.getSenha() : usuarioEntity.getSenha())
+                .nome(dto.nome() != null ? dto.nome() : usuarioEntity.getNome())
+                .email(dto.email() != null ? dto.email() : usuarioEntity.getEmail())
+                .senha(dto.senha() != null ? dto.senha() : usuarioEntity.getSenha())
                 .build();
 
         repository.saveAndFlush(usuarioAtualizado);

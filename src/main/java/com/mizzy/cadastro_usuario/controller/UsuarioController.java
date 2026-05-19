@@ -1,7 +1,8 @@
 package com.mizzy.cadastro_usuario.controller;
 
 import com.mizzy.cadastro_usuario.services.UsuarioService;
-import com.mizzy.cadastro_usuario.infrastructure.entitys.Usuario;
+import com.mizzy.cadastro_usuario.services.dto.UsuarioRequestDTO;
+import com.mizzy.cadastro_usuario.services.dto.UsuarioResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +15,13 @@ public class UsuarioController {
     private final UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity<Void> salvarUsuario(@RequestBody Usuario usuario) {
+    public ResponseEntity<Void> salvarUsuario(@RequestBody UsuarioRequestDTO usuario) {
         usuarioService.salvarUsuario(usuario);
         return ResponseEntity.ok().build();
     }
 
     @GetMapping
-    public ResponseEntity<Usuario> buscarUsuarioPorEmail(@RequestParam String email) {
+    public ResponseEntity<UsuarioResponseDTO> buscarUsuarioPorEmail(@RequestParam String email) {
         return ResponseEntity.ok(usuarioService.buscarUsuarioPorEmail(email));
     }
 
@@ -33,7 +34,7 @@ public class UsuarioController {
     @PutMapping("/{id}")
     public ResponseEntity<Void> atualizarUsuarioPorId(
             @PathVariable Integer id,
-            @RequestBody Usuario usuario) {
+            @RequestBody UsuarioRequestDTO usuario) {
 
         usuarioService.atualizarUsuarioPorId(id, usuario);
         return ResponseEntity.ok().build();
