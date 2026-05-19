@@ -4,17 +4,19 @@ import com.mizzy.cadastro_usuario.services.dto.UsuarioRequestDTO;
 import com.mizzy.cadastro_usuario.services.dto.UsuarioResponseDTO;
 import com.mizzy.cadastro_usuario.infrastructure.entitys.Usuario;
 import com.mizzy.cadastro_usuario.infrastructure.repository.UsuarioRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
-@RequiredArgsConstructor
 public class UsuarioService {
 
     private final UsuarioRepository repository;
 
+    public UsuarioService(UsuarioRepository repository) {
+        this.repository = repository;
+
+    }
     /// salvar
     public UsuarioResponseDTO salvarUsuario(UsuarioRequestDTO dto) {
 

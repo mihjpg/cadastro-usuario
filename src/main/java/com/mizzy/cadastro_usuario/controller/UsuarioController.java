@@ -3,17 +3,19 @@ package com.mizzy.cadastro_usuario.controller;
 import com.mizzy.cadastro_usuario.services.UsuarioService;
 import com.mizzy.cadastro_usuario.services.dto.UsuarioRequestDTO;
 import com.mizzy.cadastro_usuario.services.dto.UsuarioResponseDTO;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/usuario")
-@RequiredArgsConstructor
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+
+    }
     @PostMapping
     public ResponseEntity<Void> salvarUsuario(@RequestBody UsuarioRequestDTO usuario) {
         usuarioService.salvarUsuario(usuario);
